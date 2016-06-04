@@ -1,6 +1,6 @@
 #!/bin/bash
 risposta=$(zenity --question --text "Now i will move some bash files on /usr/bin/, are you sure?"; echo $?;)
-if [[ "$risposta" == "0" ]] ; then
+if [ "$risposta" -eq '0' ] ; then
   gksu cp ./led /usr/bin/led
   gksu chmod 777 /usr/bin/led
   zenity --warning --text "Done! Try to type \"led\" on your terminal!"
