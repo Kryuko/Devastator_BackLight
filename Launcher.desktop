@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Launcher
-GenericName=Launcher
-Comment=Show and install available updates
-Exec=~/Devastator_BackLight/Installer
-Icon=
-Terminal=false
-Type=Application
-Categories=System;Settings;
