@@ -1,0 +1,11 @@
+#!/bin/bash
+risposta=$(zenity --question --text "Now i will move some bash files on /usr/bin/, are you sure?"; echo $?;)
+if [[ "$risposta" == "0" ]] ; then
+  gksu cp ./led /usr/bin/led
+  gksu chmod 777 /usr/bin/led
+  zenity --warning --text "Done! Try to type \"led\" on your terminal!"
+  zenity --warning --text "Now if you want, you can make a custom shortcut for this programm. Just add /usr/bin/led on your custom keyboard shortcut"
+  zenity --text-info --title="How to" --width=800 --height=500  --html --url="http://steamos.it/keyboard_backlight.png" --checkbox="As you can see, you can just add custom keyboard shortcut by system settings > keyboard"
+else
+  zenity --error --text="You pressed NO, bye!"
+fi

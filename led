@@ -1,0 +1,10 @@
+#!/bin/bash
+led=false
+TOGGLE=$HOME/.keyboard_backlight
+if [ ! -e $TOGGLE ]; then
+	xset -led 3
+	touch $TOGGLE
+else
+	xset led 3
+	rm $TOGGLE
+fi
